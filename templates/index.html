@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Satellite Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛰️ Satellite Tracker</h1>
+        <form method="POST">
+            <label for="satellite">Choose a satellite:</label>
+            <select name="satellite" id="satellite">
+                <option value="ISS">International Space Station</option>
+                <option value="Starlink">Starlink</option>
+            </select>
+            <br><br>
+            <input type="text" name="latitude" placeholder="Enter your latitude" required>
+            <input type="text" name="longitude" placeholder="Enter your longitude" required>
+            <br><br>
+            <button type="submit">Track Satellite</button>
+        </form>
+
+        {% if data %}
+        <div class="result">
+            <h2>📍 Current Position of {{ satellite_name }}</h2>
+            <p
